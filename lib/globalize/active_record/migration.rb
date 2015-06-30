@@ -65,7 +65,7 @@ module Globalize
         # This adds all the current translated attributes of the model
         # It's a problem because in early migrations would add all the translated attributes
         def complete_translated_fields
-          @fields = {} if fields.blank?
+          @fields = {} if @fields.blank?
           translated_attribute_names.each do |name|
             @fields[name] ||= column_type(name)
           end
